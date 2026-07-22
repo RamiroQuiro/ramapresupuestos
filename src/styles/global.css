@@ -1,0 +1,27 @@
+@import "tailwindcss";
+/* src/styles/global.css */
+@import "./tailwind.css";
+
+@layer base {
+  * {
+    border-color: var(--color-primary-border);
+  }
+
+  body {
+    background-color: var(--color-primary-background);
+    color: var(--color-primary-textoTitle);
+    font-family: var(--font-family-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+@media print {
+  body { background: white !important; color: black !important; }
+  .no-print { display: none !important; }
+  .print-area { box-shadow: none !important; border: none !important; }
+}

@@ -1,0 +1,72 @@
+---
+const { id, iconNode, label, title, isIcon } = Astro.props;
+const Icon = iconNode;
+---
+ 
+<div data-id={id}>
+  {
+    label && (
+      <button
+        id={`modal-open-${id}`}
+        class="flex w-full cursor-pointer items-center justify-center rounded-md bg-primary-100 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-100/90"
+      >
+        {isIcon && <span class="mr-2"><Icon class="h-4 w-4" /></span>}
+        {label}
+      </button>
+    )
+  }
+
+  <dialog id={`dialog-modal-${id}`} class="modal">
+    <form method="dialog" class="flex w-full h-full md:max-h-9/12 md:max-w-7xl md:min-w-[35vw] flex-col overflow-hidden rounded-lg bg-white shadow-2xl" style="max-height: 85vh;">
+      <div class="flex items-center justify-between border-b px-5 py-4">
+        <h3 class="text-lg font-semibold text-gray-800">{title}</h3>
+        <button class="cursor-pointer rounded-full p-1 text-gray-400 transition-colors hover:text-red-500">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="flex-1 overflow-y-auto px-5 py-4">
+        <slot />
+      </div>
+    </form>
+  </dialog>
+</div>
+
+<script define:vars={{ id }} data-astro-exec="load">
+  const dialog = document.getElementById("dialog-modal-" + id);
+  if (dialog && !dialog.dataset.bound) {
+    dialog.dataset.bound = "1";
+    dialog.addEventListener("click", (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+  }
+
+  const openBtn = document.getElementById("modal-open-" + id);
+  if (openBtn && !openBtn.dataset.bound) {
+    openBtn.dataset.bound = "1";
+    openBtn.addEventListener("click", () => {
+      document.getElementById("dialog-modal-" + id)?.showModal();
+    });
+  }
+</script>
+
+<style>
+  .modal {
+    z-index: 1000;
+    padding: 0;
+    border: none;
+    border-radius: 12px;
+    max-width: 95vw;
+    background: transparent;
+  }
+  .modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+  }
+  dialog[open] {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+  }
+</style>

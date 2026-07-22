@@ -1,0 +1,124 @@
+---
+import LayoutLanding from "../../components/layout/LayoutLanding.astro";
+---
+
+<LayoutLanding
+  title="ramaPresupuesto — Presupuestos Profesionales en 1 Minuto"
+  description="Crea y comparte presupuestos profesionales para tus clientes en menos de 1 minuto. Gratis, sin registro, desde tu celular."
+>
+  <!-- Hero -->
+  <section class="flex min-h-screen flex-col items-center justify-center px-4 pt-20 text-center">
+    <div class="mx-auto max-w-2xl">
+      <span class="mb-4 inline-block rounded-full border border-primary-100/30 bg-primary-100/10 px-4 py-1.5 text-xs font-medium text-primary-100">
+        Gratuito para empezar
+      </span>
+      <h1 class="mt-4 text-4xl font-bold leading-tight tracking-tight text-primary-textoTitle md:text-6xl">
+        Presupuestos pro en
+        <span class="text-primary-100">1 minuto</span>
+      </h1>
+      <p class="mx-auto mt-6 max-w-lg text-lg text-primary-texto">
+        Creá y enviá presupuestos profesionales desde tu celular.
+        Sin registro, sin complicaciones. Así de simple.
+      </p>
+      <div class="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+        <a
+          href="/start"
+          class="inline-flex items-center justify-center rounded-xl bg-primary-100 px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-primary-100/30 transition-all hover:bg-primary-150 hover:shadow-xl hover:shadow-primary-100/40 active:scale-[0.97]"
+        >
+          Crear mi primer presupuesto
+        </a>
+        <a
+          href="#como-funciona"
+          class="inline-flex items-center justify-center rounded-xl border border-primary-border px-8 py-4 text-lg font-medium text-primary-texto transition-all hover:border-primary-100/50 hover:text-primary-100"
+        >
+          Ver cómo funciona
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="px-4 py-20">
+    <div class="mx-auto max-w-5xl">
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <!-- Rápido -->
+        <div class="rounded-2xl border border-primary-border bg-primary-gris p-6 transition-all hover:border-primary-100/30">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-100/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary-100">
+              <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-primary-textoTitle">Veloz</h3>
+          <p class="mt-2 text-sm text-primary-texto">Completá los datos y generá el PDF en segundos. Sin formularios eternos.</p>
+        </div>
+        <!-- Profesional -->
+        <div class="rounded-2xl border border-primary-border bg-primary-gris p-6 transition-all hover:border-primary-100/30">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-100/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary-100">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-primary-textoTitle">Profesional</h3>
+          <p class="mt-2 text-sm text-primary-texto">PDF con tu marca, datos y formato impecable. Tu cliente recibe algo premium.</p>
+        </div>
+        <!-- Gratis -->
+        <div class="rounded-2xl border border-primary-border bg-primary-gris p-6 transition-all hover:border-primary-100/30">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-100/10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary-100">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-primary-textoTitle">Gratis</h3>
+          <p class="mt-2 text-sm text-primary-texto">Sin registro, sin tarjeta, sin letra chica. Creá tu primer presupuesto ahora.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo funciona -->
+  <section id="como-funciona" class="px-4 py-20">
+    <div class="mx-auto max-w-3xl text-center">
+      <h2 class="text-3xl font-bold text-primary-textoTitle">Cómo funciona</h2>
+      <p class="mt-3 text-primary-texto">Tres pasos simples. Nada de complejo.</p>
+    </div>
+    <div class="mx-auto mt-12 max-w-4xl">
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div class="flex flex-col items-center text-center">
+          <div class="flex h-14 w-14 items-center justify-center rounded-full bg-primary-100 text-2xl font-bold text-white">
+            1
+          </div>
+          <h3 class="mt-4 text-lg font-semibold text-primary-textoTitle">Datos del cliente</h3>
+          <p class="mt-2 text-sm text-primary-texto">Nombre, teléfono y qué necesita. Tardás 20 segundos.</p>
+        </div>
+        <div class="flex flex-col items-center text-center">
+          <div class="flex h-14 w-14 items-center justify-center rounded-full bg-primary-100 text-2xl font-bold text-white">
+            2
+          </div>
+          <h3 class="mt-4 text-lg font-semibold text-primary-textoTitle">Servicios y precios</h3>
+          <p class="mt-2 text-sm text-primary-texto">Agregá lo que ofrecés con sus precios. Total automático.</p>
+        </div>
+        <div class="flex flex-col items-center text-center">
+          <div class="flex h-14 w-14 items-center justify-center rounded-full bg-primary-100 text-2xl font-bold text-white">
+            3
+          </div>
+          <h3 class="mt-4 text-lg font-semibold text-primary-textoTitle">PDF y enviar</h3>
+          <p class="mt-2 text-sm text-primary-texto">Generá el PDF y compartilo por WhatsApp, email o como quieras.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="px-4 py-20">
+    <div class="mx-auto max-w-2xl rounded-3xl border border-primary-border bg-primary-gris p-10 text-center">
+      <h2 class="text-3xl font-bold text-primary-textoTitle">¿Listo para cotizar?</h2>
+      <p class="mt-3 text-primary-texto">Empezá ahora. Es gratis y no necesitás cuenta.</p>
+      <a
+        href="/start"
+        class="mt-8 inline-flex items-center justify-center rounded-xl bg-primary-100 px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-primary-100/30 transition-all hover:bg-primary-150 hover:shadow-xl hover:shadow-primary-100/40 active:scale-[0.97]"
+      >
+        Crear presupuesto ahora
+      </a>
+    </div>
+  </section>
+</LayoutLanding>

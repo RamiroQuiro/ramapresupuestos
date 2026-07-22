@@ -1,0 +1,90 @@
+---
+import "../../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "ramaPresupuesto — Presupuestos Profesionales en 1 Minuto",
+  description = "Crea y comparte presupuestos profesionales para tus clientes en menos de 1 minuto. Gratis, sin registro, desde tu celular.",
+} = Astro.props;
+---
+
+<html lang="es" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={Astro.url.href} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="ramaPresupuesto" />
+    <meta property="og:locale" content="es_AR" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="min-h-screen bg-primary-background text-primary-textoTitle">
+    <!-- Navbar -->
+    <nav class="fixed top-0 z-50 w-full border-b border-primary-border bg-primary-background/80 backdrop-blur-md">
+      <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
+        <a href="/" class="flex items-center gap-2">
+          <span class="text-xl font-bold text-primary-100">rama</span>
+          <span class="text-xl font-bold text-primary-textoTitle">Presupuesto</span>
+        </a>
+        <a
+          href="/start"
+          class="rounded-lg bg-primary-100 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-150"
+        >
+          Crear presupuesto
+        </a>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <slot />
+
+    <!-- Footer -->
+    <footer class="border-t border-primary-border bg-primary-gris pb-16 pt-10">
+      <div class="mx-auto max-w-5xl px-4">
+        <div class="flex flex-col items-center gap-6 md:flex-row md:justify-between">
+          <div class="flex flex-col items-center gap-1 md:items-start">
+            <span class="text-lg font-bold text-primary-100">rama</span>
+            <span class="text-sm text-primary-texto">Presupuestos profesionales en 1 minuto</span>
+          </div>
+          <div class="flex gap-6 text-sm text-primary-texto">
+            <a href="/landing" class="transition-colors hover:text-primary-100">Inicio</a>
+            <a href="/start" class="transition-colors hover:text-primary-100">Crear</a>
+            <a href="#" class="transition-colors hover:text-primary-100">Ayuda</a>
+          </div>
+        </div>
+        <div class="mt-8 border-t border-primary-border pt-6 text-center text-xs text-primary-texto/60">
+          &copy; {new Date().getFullYear()} ramaPresupuesto. Parte del ecosistema RamaTools.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

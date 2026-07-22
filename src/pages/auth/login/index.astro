@@ -1,0 +1,49 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+---
+
+<Layout>
+  <main class="h-screen w-screen flex items-center justify-center">
+    <div class="flex flex-col w-1/3 h-1/3 border p-3 gap-3 rounded-2xl">
+      <div class="bg-gray-500 flex flex-col items-center justify-center">
+        <h1 class="text-3xl font-bold">Bienvenido</h1>
+      </div>
+      <div class="p-5">
+        <form class="flex w-full flex-col items-center justify-normal gap-2">
+          <div class="flex w-full gap-2 items-center">
+            <label for="email">Correo Electronico</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="bg-gray-200 flex-1"
+            />
+          </div>
+          <div class="flex w-full gap-2 items-center">
+            <label for="password">Contraseña</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="bg-gray-200 flex-1"
+            />
+          </div>
+          <div class="border-gray-500 my-3">
+            <button
+              type="submit"
+              class="bg-blue-600 text-white font-semibold rounded-lg px-3 py-1.5"
+              >Iniciar Sesión</button
+            >
+          </div>
+        </form>
+        <div class="flex w-full gap-2 items-center justify-end">
+          <a href="" class="text-blue-600">¿Olvidaste tu contraseña?</a>
+        </div>
+        <div class="border-gray-500">
+          <span class="text-gray-500">¿No tienes una cuenta? </span>
+          <a href="" class="text-blue-600">Registrate</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

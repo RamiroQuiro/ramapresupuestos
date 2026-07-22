@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@theme {
+  /* === PALETA EMBER — DARK (default) === */
+  --color-primary-100: #e85d3a;
+  --color-primary-150: #f0945a;
+  --color-primary-200: #e85d3a;
+  --color-primary-300: #52525b;
+  --color-primary-400: #8a7e6b;
+  --color-primary-500: #e85d3a;
+  --color-primary-600: #a86b4a;
+  --color-primary-error: #c44d3d;
+  --color-primary-claro: #f7f5f2;
+  --color-primary-gris: #2a2a2f;
+  --color-primary-success: #22C55E;
+  --color-primary-danger: #EF4444;
+  --color-primary-warning: #F59E0B;
+  --color-primary-texto: #a8a29e;
+  --color-primary-textoInput: #a8a29e;
+  --color-primary-textoTitle: #f7f5f2;
+  --color-primary-background: #0F0D0B;
+  --color-primary-border: #3a3a3f;
+  --color-primary-bg-componentes: #222227;
+  --color-primary-bg-componentes-2: #2e2e34;
+  --color-primary-bg-componentes-3: #3a3a3f;
+
+  /* === Fuentes === */
+  --font-family-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-family-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-family-indie-flower: "IndieFlower", serif;
+
+  /* === Border radius === */
+  --radius-1: 0.75rem;
+
+  /* === Sombras Ember === */
+  --shadow-shadow-caja-1: 0 10px 30px -10px rgba(232, 93, 58, 0.4);
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.2), 0 8px 24px -12px rgba(0, 0, 0, 0.35);
+  --shadow-xxxl:
+    5px 5px 5px rgba(0, 0, 0, 0.1), 15px 15px 15px rgba(0, 0, 0, 0.1),
+    20px 10px 20px rgba(0, 0, 0, 0.1), 50px 50px 80px rgba(0, 0, 0, 0.25),
+    inset 3px 3px 3px rgba(255, 255, 255, 0.05);
+
+  /* === ANIMACIONES === */
+  @keyframes abrirCat {
+    '0%': {
+      transform: rotate(0deg);
+    }
+    '10%': {
+      transform: rotate(14deg);
+    }
+    '20%': {
+      transform: rotate(-8deg);
+    }
+    '30%': {
+      transform: rotate(14deg);
+    }
+    '40%': {
+      transform: rotate(-4deg);
+    }
+    '50%': {
+      transform: rotate(10deg);
+    }
+    '60%': {
+      transform: rotate(0deg);
+    }
+    '100%': {
+      transform: rotate(0deg);
+    }
+  }
+
+  @keyframes aparecer {
+    '0%': {
+      opacity: 0;
+    }
+    '100%': {
+      opacity: 1;
+    }
+  }
+
+  @keyframes aparecerDeArriba {
+    '0%': {
+      opacity: 0;
+      transform: translateY(-10%);
+    }
+    '80%': {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+}
+
+/* === LIGHT MODE (toggle con .light en <html>) === */
+.light {
+  --color-primary-100: #e85d3a;
+  --color-primary-150: #d4713e;
+  --color-primary-200: #d4d0cc;
+  --color-primary-300: #b0aaa4;
+  --color-primary-400: #8a7e6b;
+  --color-primary-500: #e85d3a;
+  --color-primary-600: #a86b4a;
+  --color-primary-error: #c44d3d;
+  --color-primary-claro: #ffffff;
+  --color-primary-gris: #f7f5f2;
+  --color-primary-success: #16a34a;
+  --color-primary-danger: #dc2626;
+  --color-primary-warning: #d97706;
+  --color-primary-texto: #57534e;
+  --color-primary-textoInput: #78716c;
+  --color-primary-textoTitle: #1c1917;
+  --color-primary-background: #fafaf9;
+  --color-primary-border: #d6d3d1;
+  --color-primary-bg-componentes: #f5f5f4;
+  --color-primary-bg-componentes-2: #e7e5e4;
+  --color-primary-bg-componentes-3: #d6d3d1;
+}
+
+/* === CLASES PERSONALIZADAS === */
+.card-modern {
+  @apply bg-primary-gris border-primary-border rounded-xl border p-6;
+  transition: all 0.3s ease;
+}
+
+.card-modern:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-shadow-caja-1);
+}
+
+.btn-primary {
+  @apply bg-primary-100 rounded-xl px-6 py-3 font-medium text-white;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  @apply bg-primary-150 scale-105 transform;
+}
