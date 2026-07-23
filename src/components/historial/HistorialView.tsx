@@ -76,7 +76,11 @@ export function HistorialView() {
     if (navigator.share) {
       await navigator.share({ title: "Presupuesto", text: texto });
     } else {
-      await navigator.clipboard.writeText(texto);
+      try {
+        await navigator.clipboard.writeText(texto);
+      } catch {
+        prompt("Copiá este texto:", texto);
+      }
     }
   };
 

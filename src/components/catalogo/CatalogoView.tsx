@@ -86,7 +86,11 @@ export function CatalogoView() {
     if (navigator.share) {
       await navigator.share({ title: "Catálogo", text: `Mirá mi catálogo: ${url}` });
     } else {
-      await navigator.clipboard.writeText(url);
+      try {
+        await navigator.clipboard.writeText(url);
+      } catch {
+        prompt("Copiá este enlace:", url);
+      }
     }
   };
 

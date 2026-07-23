@@ -23,8 +23,12 @@ export function StepResumen() {
         text: texto,
       });
     } else {
-      await navigator.clipboard.writeText(texto);
-      alert("Presupuesto copiado al portapapeles");
+      try {
+        await navigator.clipboard.writeText(texto);
+        alert("Presupuesto copiado al portapapeles");
+      } catch {
+        prompt("Copiá este texto:", texto);
+      }
     }
   };
 
