@@ -1,7 +1,7 @@
 import { useStore } from "@nanostores/react";
-import { presupuesto, setClienteField } from "@/stores/presupuesto";
-import { Input, Textarea } from "@/components/ui/atomos/Input";
-import { Text } from "@/components/ui/atomos/Text";
+import { presupuesto, setClienteField } from "../../stores/presupuesto";
+import { Input, Textarea } from "../../components/ui/atomos/Input";
+import { Text } from "../../components/ui/atomos/Text";
 
 export function StepCliente() {
   const data = useStore(presupuesto);

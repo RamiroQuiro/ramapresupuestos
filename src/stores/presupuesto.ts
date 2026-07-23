@@ -29,7 +29,7 @@ const initialState: PresupuestoData = {
   servicios: [],
 };
 
-export const currentStep = atom(1);
+export const currentStep = atom(0);
 export const presupuesto = atom<PresupuestoData>({ ...initialState });
 
 export function setClienteField(field: keyof PresupuestoData["cliente"], value: string) {
@@ -49,6 +49,20 @@ export function addServicio() {
     descripcion: "",
     cantidad: 1,
     precioUnitario: 0,
+  };
+  presupuesto.set({
+    ...data,
+    servicios: [...data.servicios, newServicio],
+  });
+}
+
+export function addServicioFromCatalogo(nombre: string, precioUnitario: number) {
+  const data = presupuesto.get();
+  const newServicio: Servicio = {
+    id: crypto.randomUUID(),
+    descripcion: nombre,
+    cantidad: 1,
+    precioUnitario,
   };
   presupuesto.set({
     ...data,
@@ -88,10 +102,10 @@ export function nextStep() {
 
 export function prevStep() {
   const step = currentStep.get();
-  if (step > 1) currentStep.set(step - 1);
+  if (step > 0) currentStep.set(step - 1);
 }
 
 export function resetPresupuesto() {
-  currentStep.set(1);
+  currentStep.set(0);
   presupuesto.set({ ...initialState });
 }

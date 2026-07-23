@@ -1,0 +1,11 @@
+---
+import LayoutStart from "../../components/layout/LayoutStart.astro";
+import { CatalogoView } from "../../components/catalogo/CatalogoView";
+import { Text } from "../../components/ui/atomos/Text";
+---
+
+<LayoutStart title="Catálogo — ramaPresupuesto">
+  <Text as="h1" size="xl" weight="bold"> Catálogo de servicios </Text>
+
+  <CatalogoView client:load />
+</LayoutStart>

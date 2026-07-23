@@ -37,7 +37,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           id={inputId}
           className={cn(
-            "w-full rounded-lg border px-3 py-2.5 text-sm text-gray-900 outline-none transition-all duration-200 placeholder:text-gray-400",
+            "w-full rounded-lg border px-3 py-2.5 text-sm text-gray-100  bg-white/5 outline-none transition-all duration-200 placeholder:text-gray-400",
             "disabled:cursor-not-allowed disabled:opacity-50 disabled:bg-gray-50",
             variantStyles[inputVariant],
             error && variantStyles.error,
@@ -83,7 +83,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           ref={ref}
           id={textareaId}
           className={cn(
-            "w-full rounded-lg border px-3 py-2.5 text-sm text-gray-900 outline-none transition-all duration-200 placeholder:text-gray-400",
+            "w-full rounded-lg border px-3 py-2.5 text-sm text-primary-texto bg-white/5 outline-none transition-all duration-200 placeholder:text-gray-400",
             "disabled:cursor-not-allowed disabled:opacity-50 disabled:bg-gray-50",
             "resize-y min-h-[80px]",
             variantStyles[inputVariant],

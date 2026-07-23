@@ -15,7 +15,7 @@ export function Main({
   return (
     <main
       className={cn(
-        "flex-1 overflow-y- max-w-4/12 auto m-auto",
+        "flex-1 overflow-y- md:max-w-4/12 w-full auto m-auto",
         padded && "p-4",
         className,
       )}

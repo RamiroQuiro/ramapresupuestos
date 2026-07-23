@@ -1,5 +1,6 @@
 import { useStore } from "@nanostores/react";
 import { currentStep, nextStep, prevStep } from "../../stores/presupuesto";
+import { StepDatosPropios } from "./StepDatosPropios";
 import { StepCliente } from "./StepCliente";
 import { StepServicios } from "./StepServicios";
 import { StepResumen } from "./StepResumen";
@@ -7,6 +8,7 @@ import { Button } from "../ui/atomos/Button";
 import { Text } from "../ui/atomos/Text";
 
 const steps = [
+  { num: 0, label: "Tus datos" },
   { num: 1, label: "Cliente" },
   { num: 2, label: "Servicios" },
   { num: 3, label: "Resumen" },
@@ -23,7 +25,7 @@ export function WizardPresupuesto() {
           Nuevo presupuesto
         </Text>
         <Text variant="caption" size="sm" className="mt-1">
-          Paso {step} de 3
+          Paso {step + 1} de {steps.length}
         </Text>
       </div>
 
@@ -51,6 +53,7 @@ export function WizardPresupuesto() {
 
       {/* Step content */}
       <div className="flex-1">
+        {step === 0 && <StepDatosPropios />}
         {step === 1 && <StepCliente />}
         {step === 2 && <StepServicios />}
         {step === 3 && <StepResumen />}
@@ -58,7 +61,7 @@ export function WizardPresupuesto() {
 
       {/* Navigation */}
       <div className="flex gap-3 pb-4">
-        {step > 1 && (
+        {step > 0 && (
           <Button variant="outline" onClick={prevStep} className="flex-1">
             Anterior
           </Button>
