@@ -1,6 +1,7 @@
 import { atom } from "nanostores";
 import type { PresupuestoData } from "./presupuesto";
 import type { ProfesionalData } from "./profesional";
+import { uuid } from "../utils";
 
 export interface HistorialItem {
   id: string;
@@ -80,7 +81,7 @@ export function guardarPresupuesto(
   total: number
 ) {
   const nuevo: HistorialItem = {
-    id: crypto.randomUUID(),
+    id: uuid(),
     fecha: new Date().toISOString(),
     cliente: { ...data.cliente },
     servicios: data.servicios.map((s) => ({ ...s })),

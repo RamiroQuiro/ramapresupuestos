@@ -1,4 +1,5 @@
 import { atom } from "nanostores";
+import { uuid } from "../utils";
 
 export interface Servicio {
   id: string;
@@ -45,7 +46,7 @@ export function setClienteField(field: keyof PresupuestoData["cliente"], value: 
 export function addServicio() {
   const data = presupuesto.get();
   const newServicio: Servicio = {
-    id: crypto.randomUUID(),
+    id: uuid(),
     descripcion: "",
     cantidad: 1,
     precioUnitario: 0,
@@ -59,7 +60,7 @@ export function addServicio() {
 export function addServicioFromCatalogo(nombre: string, precioUnitario: number) {
   const data = presupuesto.get();
   const newServicio: Servicio = {
-    id: crypto.randomUUID(),
+    id: uuid(),
     descripcion: nombre,
     cantidad: 1,
     precioUnitario,

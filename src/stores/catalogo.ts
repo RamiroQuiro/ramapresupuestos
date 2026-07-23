@@ -1,4 +1,5 @@
 import { atom } from "nanostores";
+import { uuid } from "../utils";
 
 export interface CatalogoItem {
   id: string;
@@ -34,7 +35,7 @@ catalogo.subscribe((value) => {
 export function addCatalogoItem(item: Omit<CatalogoItem, "id">) {
   const newItem: CatalogoItem = {
     ...item,
-    id: crypto.randomUUID(),
+    id: uuid(),
   };
   catalogo.set([...catalogo.get(), newItem]);
 }
